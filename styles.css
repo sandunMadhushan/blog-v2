@@ -1,32 +1,43 @@
 /* Custom styles to enhance Tailwind */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Smooth scrolling for the whole page */
-html {
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
     scroll-behavior: smooth;
 }
 
-/* Custom animation for featured post image */
-.featured-post-img {
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+/* Header styles */
+header {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.featured-post-img:hover {
+/* Hero section */
+.hero-gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Card hover effects */
+article {
+    transition: all 0.3s ease;
+}
+
+article:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* Custom styles for newsletter input focus */
+/* Newsletter input focus */
 .newsletter-input:focus {
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    border-color: transparent;
 }
 
-/* Animation for tag hover */
-.tag-hover {
-    transition: all 0.2s ease;
-}
-
-.tag-hover:hover {
+/* Tag hover effects */
+.tag:hover {
     transform: translateY(-2px);
 }
 
@@ -38,13 +49,32 @@ html {
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #3b82f6;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #2563eb;
+}
+
+/* Image hover zoom effect */
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* Back to top button transition */
+#back-to-top {
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top:hover {
+    transform: translateY(-3px);
 }
