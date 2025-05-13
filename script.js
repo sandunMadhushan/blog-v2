@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     mobileMenuButton.addEventListener('click', function() {
         mobileMenu.classList.toggle('hidden');
+        mobileMenuButton.classList.toggle('text-blue-600');
     });
 
     // Back to top button
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 60,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -42,34 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     "value": "#3b82f6"
                 },
                 "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
+                    "type": "circle"
                 },
                 "opacity": {
-                    "value": 0.3,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
+                    "value": 0.4
                 },
                 "size": {
                     "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
+                    "random": true
                 },
                 "line_linked": {
                     "enable": true,
@@ -81,20 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 "move": {
                     "enable": true,
                     "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
+                    "direction": "none"
                 }
             },
             "interactivity": {
-                "detect_on": "canvas",
                 "events": {
                     "onhover": {
                         "enable": true,
@@ -103,36 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     "onclick": {
                         "enable": true,
                         "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
                     }
                 }
-            },
-            "retina_detect": true
+            }
         });
     }
 
@@ -140,28 +84,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof ScrollReveal !== 'undefined') {
         const sr = ScrollReveal({
             origin: 'bottom',
-            distance: '60px',
-            duration: 1000,
-            delay: 200,
+            distance: '40px',
+            duration: 800,
+            delay: 150,
             reset: true
         });
 
-        sr.reveal('.grid article', { interval: 200 });
-        sr.reveal('#featured-post', { delay: 300 });
+        sr.reveal('.grid article', { interval: 150 });
+        sr.reveal('#featured-post', { delay: 200 });
         sr.reveal('section h2', { origin: 'left' });
     }
 
     // Add hover effect to blog cards
     const blogCards = document.querySelectorAll('.grid article');
     blogCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            const img = card.querySelector('img');
-            img.style.transform = 'scale(1.05)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            const img = card.querySelector('img');
-            img.style.transform = 'scale(1)';
-        });
+        const img = card.querySelector('img');
+        img.classList.add('img-zoom');
     });
 });
